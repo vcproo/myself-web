@@ -1,0 +1,74 @@
+[
+  {
+    "name": "短视频动态图文卡片模板（示例占位）",
+    "group": "自研与模板",
+    "description": "制作知识分享视频时沉淀的可复用视频组件模板，改文案即可快速渲染出片。",
+    "tags": ["自研开源", "开箱即用"],
+    "url": "https://github.com/",
+    "urlLabel": "GitHub ↗",
+    "relatedArticleSlug": "remotion-ai-knowledge-video"
+  },
+  {
+    "name": "日常高频 AI 结构化提示词模板集（示例占位）",
+    "group": "自研与模板",
+    "description": "覆盖文档提炼、方案拆解、代码排错与视频脚本整理的实测提示词集合，复制即可套用。",
+    "tags": ["自研整理", "免费复用"],
+    "url": "https://github.com/",
+    "urlLabel": "GitHub ↗",
+    "relatedArticleSlug": "structured-prompt-templates-for-creators"
+  },
+  {
+    "name": "Remotion",
+    "group": "AI 视频与内容创作",
+    "description": "用 React 代码以编程方式批量制作高质量动效视频，极其适合结合 AI 自动生成标准化知识视频。",
+    "tags": ["开源框架", "视频编程"],
+    "url": "https://www.remotion.dev/",
+    "urlLabel": "访问官网 ↗",
+    "relatedArticleSlug": "remotion-ai-knowledge-video"
+  },
+  {
+    "name": "Whisper 本地语音转字幕工具链（示例占位）",
+    "group": "AI 视频与内容创作",
+    "description": "在本地电脑离线完成高精度中英文语音识别与 SRT 时间轴导出，口播剪辑省时利器。",
+    "tags": ["开源项目", "本地可用", "免费"],
+    "url": "https://github.com/openai/whisper",
+    "urlLabel": "GitHub ↗",
+    "relatedArticleSlug": "subtitle-and-voiceover-open-source-workflow"
+  },
+  {
+    "name": "精选开源 AI 桌面助手（示例占位）",
+    "group": "AI 效率与日常工具",
+    "description": "支持接入多种主流大模型的轻量桌面端工具，界面清爽，适合日常问答、翻译与文档总结。",
+    "tags": ["开源项目", "免费"],
+    "url": "https://github.com/",
+    "urlLabel": "GitHub ↗",
+    "relatedArticleSlug": "zero-basis-github-ai-guide"
+  },
+  {
+    "name": "本地知识库与长文档问答工具（示例占位）",
+    "group": "AI 效率与日常工具",
+    "description": "把多份 PDF、Word 与笔记拖入文件夹即可直接提问检索，每条回答均附带原文出处定位。",
+    "tags": ["实用工具", "本地优先"],
+    "url": "https://github.com/",
+    "urlLabel": "GitHub ↗",
+    "relatedArticleSlug": "local-llm-and-desktop-assistants-review"
+  },
+  {
+    "name": "Ollama",
+    "group": "开发与进阶利器",
+    "description": "一行命令在个人电脑上下载、管理和运行主流开源大模型，无需繁琐环境配置。",
+    "tags": ["开源项目", "本地可用", "免费"],
+    "url": "https://ollama.com/",
+    "urlLabel": "访问官网 ↗",
+    "relatedArticleSlug": "zero-basis-github-ai-guide"
+  },
+  {
+    "name": "n8n 可视化工作流自动化",
+    "group": "开发与进阶利器",
+    "description": "支持自部署的节点式自动化工具，可将日常资讯整理、AI 摘要与消息通知串成定时流水线。",
+    "tags": ["开源项目", "工作流自动化"],
+    "url": "https://github.com/n8n-io/n8n",
+    "urlLabel": "GitHub ↗",
+    "relatedArticleSlug": "ai-in-daily-work-cases"
+  }
+]

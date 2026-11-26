@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <pattern id="dotsPrompt" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#D5C7AE" opacity="0.55"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#F6F1E8"/>
+  <rect width="800" height="450" fill="url(#dotsPrompt)"/>
+  <circle cx="170" cy="110" r="150" fill="#FBE3D7" opacity="0.65"/>
+  <circle cx="640" cy="350" r="165" fill="#E1ECE3" opacity="0.65"/>
+
+  <!-- Interlocking Modular Prompt Blocks Blueprint -->
+  <rect x="136" y="68" width="528" height="314" rx="24" fill="#FCFBF8" stroke="#221E1C" stroke-width="2.8"/>
+  <line x1="136" y1="114" x2="664" y2="114" stroke="#221E1C" stroke-width="2.2"/>
+  <circle cx="166" cy="91" r="6" fill="#D95D39"/>
+  <circle cx="186" cy="91" r="6" fill="#C88A2E"/>
+  <circle cx="206" cy="91" r="6" fill="#467352"/>
+  <text x="400" y="96" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#645B55">STRUCTURED PROMPT BLOCKS</text>
+
+  <!-- 4 Interlocking Puzzle Cards -->
+  <g transform="translate(168, 138)">
+    <rect x="0" y="0" width="218" height="96" rx="14" fill="#FDF3EE" stroke="#221E1C" stroke-width="2.4"/>
+    <circle cx="218" cy="48" r="14" fill="#FDF3EE" stroke="#221E1C" stroke-width="2.4"/>
+    <rect x="20" y="20" width="68" height="20" rx="10" fill="#D95D39"/>
+    <text x="54" y="34" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#FCFBF8">CONTEXT</text>
+    <rect x="20" y="52" width="156" height="9" rx="4.5" fill="#221E1C"/>
+    <rect x="20" y="69" width="118" height="8" rx="4" fill="#645B55" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(414, 138)">
+    <rect x="0" y="0" width="218" height="96" rx="14" fill="#E1ECE3" stroke="#221E1C" stroke-width="2.4"/>
+    <rect x="24" y="20" width="58" height="20" rx="10" fill="#467352"/>
+    <text x="53" y="34" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#FCFBF8">TASK</text>
+    <rect x="24" y="52" width="154" height="9" rx="4.5" fill="#221E1C"/>
+    <rect x="24" y="69" width="124" height="8" rx="4" fill="#365A40" opacity="0.7"/>
+  </g>
+
+  <g transform="translate(168, 254)">
+    <rect x="0" y="0" width="218" height="96" rx="14" fill="#F5EBD0" stroke="#221E1C" stroke-width="2.4"/>
+    <rect x="20" y="20" width="84" height="20" rx="10" fill="#C88A2E"/>
+    <text x="62" y="34" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#FCFBF8">BOUNDARY</text>
+    <rect x="20" y="52" width="160" height="9" rx="4.5" fill="#221E1C"/>
+    <rect x="20" y="69" width="112" height="8" rx="4" fill="#645B55" opacity="0.7"/>
+  </g>
+
+  <g transform="translate(414, 254)">
+    <rect x="0" y="0" width="218" height="96" rx="14" fill="#FAF7F2" stroke="#221E1C" stroke-width="2.4"/>
+    <rect x="24" y="20" width="74" height="20" rx="10" fill="#221E1C"/>
+    <text x="61" y="34" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#FAF7F2">FORMAT</text>
+    <rect x="24" y="52" width="150" height="9" rx="4.5" fill="#D95D39"/>
+    <rect x="24" y="69" width="130" height="8" rx="4" fill="#467352"/>
+  </g>
+</svg>

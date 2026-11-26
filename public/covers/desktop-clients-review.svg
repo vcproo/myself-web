@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#F6F2EB"/>
+  <circle cx="400" cy="225" r="210" fill="#F5EBD0" opacity="0.45"/>
+  <!-- Three layered app cards comparison -->
+  <rect x="110" y="112" width="180" height="236" rx="18" fill="#FCFBF8" stroke="#221E1C" stroke-width="2"/>
+  <rect x="134" y="140" width="60" height="22" rx="11" fill="#F3EDE3"/>
+  <text x="164" y="155" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#645B55">APP 01</text>
+  <rect x="134" y="180" width="132" height="10" rx="5" fill="#221E1C"/>
+  <rect x="134" y="204" width="108" height="8" rx="4" fill="#968B82"/>
+  <rect x="134" y="246" width="132" height="10" rx="5" fill="#E7DEC9"/>
+  <rect x="134" y="246" width="96" height="10" rx="5" fill="#C88A2E"/>
+  <rect x="134" y="274" width="132" height="10" rx="5" fill="#E7DEC9"/>
+  <rect x="134" y="274" width="110" height="10" rx="5" fill="#467352"/>
+
+  <!-- Center Winner Card -->
+  <rect x="306" y="78" width="188" height="290" rx="20" fill="#FCFBF8" stroke="#D95D39" stroke-width="2.8"/>
+  <rect x="330" y="106" width="88" height="24" rx="12" fill="#FDF3EE" stroke="#D95D39" stroke-width="1.4"/>
+  <text x="374" y="122" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#D95D39">实测主力推荐</text>
+  <rect x="330" y="150" width="140" height="12" rx="6" fill="#221E1C"/>
+  <rect x="330" y="176" width="120" height="8" rx="4" fill="#645B55"/>
+  <rect x="330" y="216" width="140" height="12" rx="6" fill="#F3EDE3"/>
+  <rect x="330" y="216" width="128" height="12" rx="6" fill="#D95D39"/>
+  <rect x="330" y="246" width="140" height="12" rx="6" fill="#F3EDE3"/>
+  <rect x="330" y="246" width="122" height="12" rx="6" fill="#467352"/>
+  <rect x="330" y="276" width="140" height="12" rx="6" fill="#F3EDE3"/>
+  <rect x="330" y="276" width="132" height="12" rx="6" fill="#C88A2E"/>
+  <rect x="330" y="314" width="140" height="30" rx="10" fill="#221E1C"/>
+  <text x="400" y="333" text-anchor="middle" font-family="monospace" font-size="11" fill="#FAF7F2">响应快 · 本地知识库</text>
+
+  <!-- Right Card -->
+  <rect x="510" y="112" width="180" height="236" rx="18" fill="#FCFBF8" stroke="#221E1C" stroke-width="2"/>
+  <rect x="534" y="140" width="60" height="22" rx="11" fill="#F3EDE3"/>
+  <text x="564" y="155" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#645B55">APP 03</text>
+  <rect x="534" y="180" width="132" height="10" rx="5" fill="#221E1C"/>
+  <rect x="534" y="204" width="100" height="8" rx="4" fill="#968B82"/>
+  <rect x="534" y="246" width="132" height="10" rx="5" fill="#E7DEC9"/>
+  <rect x="534" y="246" width="118" height="10" rx="5" fill="#467352"/>
+  <rect x="534" y="274" width="132" height="10" rx="5" fill="#E7DEC9"/>
+  <rect x="534" y="274" width="84" height="10" rx="5" fill="#D95D39"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <rect width="240" height="240" rx="24" fill="#FAF7F2"/>
+  <rect x="12" y="12" width="216" height="216" rx="18" stroke="#E5DCCF" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="44" y="44" width="44" height="44" rx="10" stroke="#221E1C" stroke-width="4"/>
+  <rect x="56" y="56" width="20" height="20" rx="4" fill="#D95D39"/>
+  <rect x="152" y="44" width="44" height="44" rx="10" stroke="#221E1C" stroke-width="4"/>
+  <rect x="164" y="56" width="20" height="20" rx="4" fill="#221E1C"/>
+  <rect x="44" y="152" width="44" height="44" rx="10" stroke="#221E1C" stroke-width="4"/>
+  <rect x="56" y="164" width="20" height="20" rx="4" fill="#221E1C"/>
+  <rect x="104" y="48" width="12" height="12" rx="3" fill="#645B55"/>
+  <rect x="124" y="48" width="12" height="12" rx="3" fill="#221E1C"/>
+  <rect x="104" y="68" width="32" height="12" rx="3" fill="#467352"/>
+  <rect x="48" y="104" width="28" height="12" rx="3" fill="#221E1C"/>
+  <rect x="48" y="124" width="12" height="12" rx="3" fill="#D95D39"/>
+  <rect x="68" y="124" width="24" height="12" rx="3" fill="#645B55"/>
+  <rect x="98" y="98" width="44" height="44" rx="12" fill="#FDF3EE" stroke="#D95D39" stroke-width="2"/>
+  <text x="120" y="125" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#D95D39">QR</text>
+  <rect x="156" y="104" width="36" height="12" rx="3" fill="#221E1C"/>
+  <rect x="156" y="124" width="16" height="12" rx="3" fill="#467352"/>
+  <rect x="180" y="124" width="12" height="12" rx="3" fill="#221E1C"/>
+  <rect x="104" y="156" width="32" height="12" rx="3" fill="#221E1C"/>
+  <rect x="148" y="156" width="44" height="12" rx="3" fill="#D95D39"/>
+  <rect x="104" y="178" width="16" height="12" rx="3" fill="#645B55"/>
+  <rect x="132" y="178" width="28" height="12" rx="3" fill="#221E1C"/>
+  <rect x="172" y="178" width="20" height="12" rx="3" fill="#467352"/>
+</svg>

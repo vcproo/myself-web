@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  getSiteConfig,
+  getAllArticles,
+  getAllTools,
+  type ArticleItem,
+} from '../../lib/content';
+import {
+  CopyMarkdownButton,
+  ArticleFloatingToc,
+} from '../../components/ArticleDetailActions';
+import ToolCard from '../../components/ToolCard';
+
+export async function getStaticPaths() {
+  const articles = await getAllArticles();
+  return articles.map((article, index) => ({
+    params: { slug: article.slug },
+    props: {
+      article,
+      prevArticle: index < articles.length - 1 ? articles[index + 1] : null,
+      nextArticle: index > 0 ? articles[index - 1] : null,
+    },
+  }));
+}
+
+interface Props {
+  article: ArticleItem;
+  prevArticle: ArticleItem | null;
+  nextArticle: ArticleItem | null;
+}
+
+const { article, prevArticle, nextArticle } = Astro.props;
+const site = getSiteConfig();
+const allTools = await getAllTools();
+const relatedTools = allTools.filter(
+  (t) => t.relatedArticleSlug === article.slug
+);
+---
+
+<BaseLayout
+  title={`${article.title} · ${site.siteName}`}
+  description={article.summary}
+  showBackHome={true}
+>
+  <ArticleFloatingToc client:load headings={article.headings} />
+
+  <article class="mx-auto max-w-[740px] pt-8 pb-12">
+    <!-- Top Meta & Action Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-paper-300/80 pb-4">
+      <a
+        href="/articles"
+        class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-ink-800 hover:text-terracotta-600 transition-colors"
+      >
+        <span>← 返回全部文章</span>
+      </a>
+
+      <div class="flex flex-wrap items-center gap-2.5">
+        <time class="font-mono text-xs text-ink-400">
+          {article.formattedDate}
+        </time>
+        <a
+          href={`/articles?category=${encodeURIComponent(article.category)}`}
+          class="rounded-full border border-terracotta-200 bg-terracotta-50 px-2.5 py-0.5 text-xs font-semibold text-terracotta-700 hover:bg-terracotta-500 hover:text-paper-50 transition-colors"
+        >
+          {article.category}
+        </a>
+        <CopyMarkdownButton client:load rawMarkdown={article.rawMarkdown} />
+      </div>
+    </div>
+
+    <!-- Article Header -->
+    <header class="mt-7">
+      <h1 class="text-2xl sm:text-[2.05rem] font-extrabold leading-[1.32] tracking-tight text-ink-900">
+        {article.title}
+      </h1>
+
+      <p class="mt-3.5 text-sm sm:text-base leading-relaxed text-ink-600">
+        {article.summary}
+      </p>
+
+      <!-- Conditional Companion Video Callout -->
+      {article.videoLinks && article.videoLinks.length > 0 && (
+        <div class="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-terracotta-200 bg-gradient-to-r from-terracotta-50 via-paper-50 to-ochre-50 p-4 shadow-sm">
+          <div class="flex items-center gap-2.5 text-sm font-semibold text-ink-900">
+            <span class="text-base" aria-hidden="true">📺</span>
+            <span>本期内容配有演示视频，点击前往观看视频版 →</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            {article.videoLinks.map((video) => (
+              <a
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="tactile-btn inline-flex items-center gap-1 rounded-full bg-terracotta-500 px-3.5 py-1.5 text-xs font-bold text-paper-50 hover:bg-terracotta-600 transition-colors"
+              >
+                <span>前往 {video.platform} 观看 ↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {article.cover && (
+        <div class="mt-6 overflow-hidden rounded-2xl border border-paper-300 bg-paper-200 shadow-paper">
+          <img
+            src={article.cover}
+            alt={article.title}
+            class="aspect-video w-full object-cover"
+          />
+        </div>
+      )}
+    </header>
+
+    <!-- Rendered Markdown Prose -->
+    <div
+      class="editorial-prose mt-8"
+      set:html={article.htmlContent}
+    />
+
+    <!-- Conditional Related Open-Source Projects / Tools -->
+    {relatedTools.length > 0 && (
+      <section class="mt-12 rounded-2xl border border-paper-300 bg-paper-100/80 p-5 sm:p-6">
+        <div class="mb-4 flex items-center gap-2">
+          <span class="h-3.5 w-1 rounded-full bg-sage-600"></span>
+          <h2 class="text-base font-bold text-ink-900">
+            本文关联的开源项目与实用工具
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {relatedTools.map((tool, idx) => (
+            <ToolCard
+              client:visible
+              tool={{ ...tool, relatedArticleSlug: undefined }}
+              index={idx}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Bottom Prev / Next Navigation -->
+    <nav
+      aria-label="上下篇文章切换"
+      class="mt-12 border-t border-paper-300 pt-8"
+    >
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {prevArticle ? (
+          <a
+            href={`/articles/${prevArticle.slug}`}
+            class="spotlight-card group flex flex-col justify-between rounded-2xl p-4 hover:-translate-y-0.5"
+          >
+            <span class="font-mono text-xs text-ink-400">← 上一篇</span>
+            <span class="mt-1.5 line-clamp-2 text-sm font-bold text-ink-900 group-hover:text-terracotta-600 transition-colors">
+              {prevArticle.title}
+            </span>
+          </a>
+        ) : (
+          <div class="hidden sm:block" />
+        )}
+
+        {nextArticle && (
+          <a
+            href={`/articles/${nextArticle.slug}`}
+            class="spotlight-card group flex flex-col justify-between rounded-2xl p-4 sm:text-right hover:-translate-y-0.5"
+          >
+            <span class="font-mono text-xs text-ink-400">下一篇 →</span>
+            <span class="mt-1.5 line-clamp-2 text-sm font-bold text-ink-900 group-hover:text-terracotta-600 transition-colors">
+              {nextArticle.title}
+            </span>
+          </a>
+        )}
+      </div>
+
+      <div class="mt-7 flex justify-center">
+        <a
+          href="/articles"
+          class="tactile-btn inline-flex items-center gap-2 rounded-full border border-paper-300 bg-paper-50 px-5 py-2.5 text-xs font-bold text-ink-800 hover:border-terracotta-500 hover:text-terracotta-600 transition-colors"
+        >
+          <span>← 返回全部文章</span>
+        </a>
+      </div>
+    </nav>
+  </article>
+</BaseLayout>

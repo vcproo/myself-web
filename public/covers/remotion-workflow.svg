@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#F6F0E6"/>
+  <circle cx="680" cy="90" r="180" fill="#FBE3D7" opacity="0.65"/>
+  <circle cx="130" cy="380" r="150" fill="#E1ECE3" opacity="0.6"/>
+  <!-- Subtle drafting dots -->
+  <g fill="#D5C7AE" opacity="0.6">
+    <circle cx="80" cy="70" r="2.5"/><circle cx="120" cy="70" r="2.5"/><circle cx="160" cy="70" r="2.5"/>
+    <circle cx="80" cy="110" r="2.5"/><circle cx="120" cy="110" r="2.5"/><circle cx="160" cy="110" r="2.5"/>
+  </g>
+  <!-- Video Studio Frame -->
+  <rect x="120" y="64" width="560" height="260" rx="20" fill="#FCFBF8" stroke="#221E1C" stroke-width="2.5"/>
+  <rect x="120" y="64" width="560" height="42" rx="20" fill="#F3EDE3"/>
+  <line x1="120" y1="106" x2="680" y2="106" stroke="#221E1C" stroke-width="2"/>
+  <circle cx="148" cy="85" r="6" fill="#D95D39"/>
+  <circle cx="168" cy="85" r="6" fill="#C88A2E"/>
+  <circle cx="188" cy="85" r="6" fill="#467352"/>
+  <text x="400" y="90" text-anchor="middle" font-family="monospace" font-size="13" font-weight="600" fill="#645B55">remotion-studio // 60fps</text>
+  <!-- Code card left -->
+  <rect x="152" y="132" width="220" height="162" rx="12" fill="#F6F1E9" stroke="#D5C7AE" stroke-width="1.8"/>
+  <rect x="172" y="154" width="84" height="10" rx="5" fill="#D95D39"/>
+  <rect x="172" y="176" width="150" height="8" rx="4" fill="#221E1C" opacity="0.75"/>
+  <rect x="188" y="196" width="130" height="8" rx="4" fill="#467352" opacity="0.85"/>
+  <rect x="188" y="216" width="110" height="8" rx="4" fill="#C88A2E" opacity="0.85"/>
+  <rect x="172" y="236" width="90" height="8" rx="4" fill="#645B55" opacity="0.6"/>
+  <rect x="172" y="260" width="68" height="18" rx="9" fill="#E1ECE3"/>
+  <!-- Motion Preview card right -->
+  <rect x="402" y="132" width="246" height="162" rx="12" fill="#FDF3EE" stroke="#D95D39" stroke-width="2"/>
+  <rect x="426" y="156" width="110" height="14" rx="7" fill="#221E1C"/>
+  <rect x="426" y="182" width="196" height="36" rx="8" fill="#FCFBF8" stroke="#E5DCCF" stroke-width="1.5"/>
+  <circle cx="446" cy="200" r="7" fill="#D95D39"/>
+  <rect x="464" y="196" width="120" height="8" rx="4" fill="#221E1C"/>
+  <rect x="426" y="230" width="196" height="36" rx="8" fill="#FCFBF8" stroke="#E5DCCF" stroke-width="1.5"/>
+  <circle cx="446" cy="248" r="7" fill="#467352"/>
+  <rect x="464" y="244" width="140" height="8" rx="4" fill="#645B55"/>
+  <!-- Timeline Scrubber Bar -->
+  <rect x="120" y="346" width="560" height="48" rx="14" fill="#FCFBF8" stroke="#221E1C" stroke-width="2"/>
+  <rect x="144" y="365" width="160" height="10" rx="5" fill="#D95D39"/>
+  <rect x="314" y="365" width="190" height="10" rx="5" fill="#467352"/>
+  <rect x="514" y="365" width="142" height="10" rx="5" fill="#E7DEC9"/>
+  <line x1="360" y1="336" x2="360" y2="404" stroke="#221E1C" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="360" cy="336" r="7" fill="#D95D39" stroke="#221E1C" stroke-width="2"/>
+</svg>

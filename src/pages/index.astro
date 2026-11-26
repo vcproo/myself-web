@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroStudio from '../components/HeroStudio';
+import HomeTabsShowcase from '../components/HomeTabsShowcase';
+import { getSiteConfig, getAllArticles, getAllTools } from '../lib/content';
+
+const site = getSiteConfig();
+const allArticles = await getAllArticles();
+const tools = await getAllTools();
+
+const sortedForHome = [
+  ...allArticles.filter((a) => a.featured),
+  ...allArticles.filter((a) => !a.featured),
+].slice(0, 8);
+
+const homeArticleCards = sortedForHome.map((a) => ({
+  slug: a.slug,
+  title: a.title,
+  formattedDate: a.formattedDate,
+  summary: a.summary,
+  category: a.category,
+  cover: a.cover,
+  readingMinutes: a.readingMinutes,
+  videoLinks: a.videoLinks,
+}));
+---
+
+<BaseLayout
+  title={`${site.siteName} · ${site.hero.subtitle}`}
+  description={site.hero.description}
+  showBackHome={false}
+>
+  <HeroStudio
+    client:load
+    siteName={site.siteName}
+    subtitle={site.hero.subtitle}
+    description={site.hero.description}
+    featuredArticles={homeArticleCards}
+    featuredTools={tools}
+    totalToolCount={tools.length}
+    headerLinks={site.headerLinks}
+  />
+
+  <HomeTabsShowcase
+    client:load
+    articles={homeArticleCards}
+    totalArticleCount={allArticles.length}
+    tools={tools}
+    toolGroups={site.toolGroups}
+    about={site.about}
+    contact={site.contact}
+  />
+</BaseLayout>

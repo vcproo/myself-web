@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-canvas: #FAF7F2;
+  --bg-surface: #FCFBF8;
+  --ink-primary: #221E1C;
+  --ink-secondary: #645B55;
+  --border-warm: #E6DDD0;
+  --accent-terracotta: #D95D39;
+  --accent-sage: #467352;
+}
+
+@layer base {
+  html {
+    background-color: var(--bg-canvas);
+    color: var(--ink-primary);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background-color: var(--bg-canvas);
+    /* Architectural warm drafting cross-dot canvas — distinct from square graph grids */
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(245, 196, 174, 0.28) 0%, transparent 38%),
+      radial-gradient(circle at 88% 22%, rgba(225, 236, 227, 0.42) 0%, transparent 36%),
+      radial-gradient(circle at 50% 92%, rgba(245, 235, 208, 0.35) 0%, transparent 45%),
+      radial-gradient(#DFD5C5 1.15px, transparent 1.15px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: #FBE3D7;
+    color: #221E1C;
+  }
+}
+
+/* Interactive Spotlight Surface */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(252, 251, 248, 0.92);
+  border: 1px solid #E6DDD0;
+  transition:
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    box-shadow 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    420px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(217, 93, 57, 0.085),
+    rgba(200, 138, 46, 0.03) 45%,
+    transparent 72%
+  );
+  z-index: 0;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.spotlight-card:hover {
+  border-color: #D8C2B0;
+  box-shadow:
+    0 4px 12px rgba(34, 30, 28, 0.05),
+    0 20px 38px -14px rgba(217, 93, 57, 0.13);
+}
+
+/* Editorial Prose & Article Styling */
+.editorial-prose {
+  color: #352F2C;
+  font-size: 1.04rem;
+  line-height: 1.88;
+}
+
+.editorial-prose p {
+  margin-top: 1.15em;
+  margin-bottom: 1.15em;
+}
+
+.editorial-prose h2 {
+  position: relative;
+  color: #221E1C;
+  font-weight: 700;
+  font-size: 1.42rem;
+  line-height: 1.4;
+  margin-top: 2.4em;
+  margin-bottom: 0.85em;
+  padding-left: 1.05rem;
+  scroll-margin-top: 6rem;
+}
+
+.editorial-prose h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.32em;
+  bottom: 0.28em;
+  width: 4px;
+  border-radius: 99px;
+  background: linear-gradient(180deg, #D95D39 0%, #C88A2E 100%);
+}
+
+.editorial-prose h3 {
+  color: #221E1C;
+  font-weight: 700;
+  font-size: 1.16rem;
+  margin-top: 1.8em;
+  margin-bottom: 0.65em;
+  scroll-margin-top: 6rem;
+}
+
+.editorial-prose strong {
+  color: #221E1C;
+  font-weight: 700;
+}
+
+.editorial-prose ul,
+.editorial-prose ol {
+  margin: 1.1em 0;
+  padding-left: 1.45rem;
+}
+
+.editorial-prose ul {
+  list-style-type: disc;
+}
+
+.editorial-prose ol {
+  list-style-type: decimal;
+}
+
+.editorial-prose li {
+  margin: 0.45em 0;
+}
+
+.editorial-prose li::marker {
+  color: #D95D39;
+  font-weight: 600;
+}
+
+.editorial-prose :not(pre) > code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+  background-color: #F3EDE3;
+  color: #9E3B1E;
+  padding: 0.18em 0.48em;
+  border-radius: 6px;
+  border: 1px solid #E5DCCF;
+}
+
+.editorial-prose blockquote {
+  margin: 1.6em 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid #467352;
+  background-color: #F2F7F3;
+  border-radius: 0 12px 12px 0;
+  color: #352F2C;
+}
+
+.editorial-prose blockquote p {
+  margin: 0.35em 0;
+}
+
+.editorial-prose table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.65em 0;
+  font-size: 0.94rem;
+  background: #FCFBF8;
+  border: 1px solid #E5DCCF;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.editorial-prose th {
+  background: #F3EDE3;
+  color: #221E1C;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.78rem 1rem;
+  border-bottom: 1px solid #E5DCCF;
+}
+
+.editorial-prose td {
+  padding: 0.78rem 1rem;
+  border-bottom: 1px solid #EFE9DF;
+  color: #352F2C;
+  vertical-align: top;
+}
+
+.editorial-prose tr:last-child td {
+  border-bottom: none;
+}
+
+.editorial-prose img {
+  border-radius: 16px;
+  border: 1px solid #E5DCCF;
+  margin: 1.75em auto;
+}
+
+/* Custom Code & Prompt Cards inside Articles */
+.code-card {
+  margin: 1.65em 0;
+  border-radius: 16px;
+  border: 1px solid #E3D9C8;
+  background: #FCFBF8;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(34, 30, 28, 0.04);
+}
+
+.code-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.95rem;
+  background: #F3EDE3;
+  border-bottom: 1px solid #E5DCCF;
+}
+
+.code-card pre {
+  margin: 0 !important;
+  padding: 1.05rem 1.2rem !important;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  background: #FCFBF8 !important;
+}
+
+.prompt-card {
+  border-color: #ECC5B3;
+  background: #FFFDFB;
+  box-shadow: 0 4px 18px -6px rgba(217, 93, 57, 0.1);
+}
+
+.prompt-card .code-card-header {
+  background: linear-gradient(90deg, #FDF3EE 0%, #FAF4EA 100%);
+  border-bottom-color: #F1D3C4;
+}
+
+.prompt-card pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'Plus Jakarta Sans', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.8;
+  color: #2B2523;
+  background: #FFFDFB !important;
+}
+
+.copy-snippet-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #DDD2C2;
+  background: #FCFBF8;
+  color: #352F2C;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-snippet-btn:hover {
+  border-color: #D95D39;
+  color: #D95D39;
+  transform: translateY(-1px);
+}
+
+.copy-snippet-btn.is-copied {
+  border-color: #467352;
+  background: #E1ECE3;
+  color: #365A40;
+}
+
+/* Subtle tactile button press */
+.tactile-btn {
+  transition:
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tactile-btn:active {
+  transform: translateY(1.5px) scale(0.985);
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#F5F1E8"/>
+  <circle cx="660" cy="110" r="150" fill="#E1ECE3" opacity="0.75"/>
+  <circle cx="140" cy="360" r="150" fill="#F5EBD0" opacity="0.7"/>
+  <!-- Browser Repo Card -->
+  <rect x="130" y="68" width="540" height="314" rx="20" fill="#FCFBF8" stroke="#221E1C" stroke-width="2.5"/>
+  <rect x="130" y="68" width="540" height="44" rx="20" fill="#F3EDE3"/>
+  <line x1="130" y1="112" x2="670" y2="112" stroke="#221E1C" stroke-width="2"/>
+  <circle cx="158" cy="90" r="5.5" fill="#D95D39"/>
+  <circle cx="176" cy="90" r="5.5" fill="#C88A2E"/>
+  <circle cx="194" cy="90" r="5.5" fill="#467352"/>
+  <rect x="224" y="80" width="260" height="20" rx="10" fill="#FCFBF8" stroke="#D5C7AE" stroke-width="1.2"/>
+  <text x="354" y="94" text-anchor="middle" font-family="monospace" font-size="11" fill="#645B55">github.com / open-source-ai</text>
+  <!-- Left file tree -->
+  <rect x="158" y="138" width="300" height="114" rx="12" fill="#FAF7F2" stroke="#E5DCCF" stroke-width="1.5"/>
+  <rect x="178" y="158" width="120" height="9" rx="4.5" fill="#221E1C"/>
+  <rect x="178" y="180" width="210" height="8" rx="4" fill="#968B82"/>
+  <rect x="178" y="202" width="180" height="8" rx="4" fill="#968B82"/>
+  <rect x="178" y="224" width="140" height="8" rx="4" fill="#467352"/>
+  <!-- Right Releases Spotlight -->
+  <rect x="478" y="138" width="164" height="114" rx="12" fill="#FDF3EE" stroke="#D95D39" stroke-width="2.2"/>
+  <rect x="496" y="156" width="76" height="20" rx="10" fill="#D95D39"/>
+  <text x="534" y="170" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#FCFBF8">Releases</text>
+  <rect x="496" y="188" width="128" height="22" rx="6" fill="#FCFBF8" stroke="#D95D39" stroke-width="1.4"/>
+  <text x="560" y="203" text-anchor="middle" font-family="monospace" font-size="11" font-weight="600" fill="#221E1C">Setup-x64.exe ↓</text>
+  <rect x="496" y="218" width="128" height="20" rx="6" fill="#FCFBF8" stroke="#E5DCCF" stroke-width="1.2"/>
+  <text x="560" y="232" text-anchor="middle" font-family="monospace" font-size="10" fill="#645B55">macOS-arm64.dmg</text>
+  <!-- Bottom Terminal Quick Start -->
+  <rect x="158" y="272" width="484" height="84" rx="12" fill="#221E1C"/>
+  <text x="182" y="304" font-family="monospace" font-size="14" fill="#E1ECE3">$ git clone &amp;&amp; npm run start</text>
+  <text x="182" y="332" font-family="monospace" font-size="13" fill="#F5C4AE">✓ Local AI app running at http://localhost:3000</text>
+</svg>

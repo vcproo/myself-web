@@ -1,0 +1,123 @@
+{
+  "siteName": "蜘蛛侦探",
+  "copyright": "© 2026 蜘蛛侦探",
+  "headerLinks": [
+    {
+      "label": "Bilibili",
+      "url": "https://space.bilibili.com/",
+      "platform": "bilibili"
+    },
+    {
+      "label": "抖音",
+      "url": "https://www.douyin.com/",
+      "platform": "douyin"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/",
+      "platform": "github"
+    }
+  ],
+  "hero": {
+    "title": "蜘蛛侦探",
+    "subtitle": "多年程序开发 · AI 实战与视频创作者",
+    "description": "从程序员的日常实战出发，持续分享通俗好懂的 AI 具体应用案例、实操教程与精选开源项目。"
+  },
+  "toolGroups": [
+    {
+      "name": "自研与模板",
+      "description": "创作者自己开发或整理的开源项目、Remotion 视频模板、自动化脚本与提示词资源。"
+    },
+    {
+      "name": "AI 视频与内容创作",
+      "description": "用于视频生成、字幕配音、图像处理的优质开源项目与实用工具。"
+    },
+    {
+      "name": "AI 效率与日常工具",
+      "description": "适合大众日常提效、文档处理、知识整理与工作流自动化的开源软件或工具。"
+    },
+    {
+      "name": "开发与进阶利器",
+      "description": "辅助编程开发、AI Agent 协作与本地模型运行的开源项目。"
+    }
+  ],
+  "articleCategories": [
+    "AI 实战案例",
+    "实操教程",
+    "视频创作与 Remotion",
+    "经验与实测"
+  ],
+  "about": {
+    "introLead": "你好，我是**蜘蛛侦探**。",
+    "paragraphs": [
+      "我是一名有着多年开发经验的程序员，也是长期在一线高频使用各类 AI 工具的实践者。",
+      "现在 AI 越来越普及，身边越来越多非技术背景的朋友也开始接触 AI。但在实际使用中，大家常常会被满天飞的新概念绕晕，或者遇到好用的开源项目却卡在部署和配置上。",
+      "我做自媒体和搭建这个网站的初衷很简单：**把多年程序开发培养出的工具筛选能力与 AI 实战经验结合起来，替大家实测、踩坑、总结，用最平实易懂的视频和文章，分享真正能用起来的 AI 具体案例、实用教程与开源好物。**"
+    ],
+    "capabilities": [
+      {
+        "title": "软件开发实践",
+        "description": "多年一线编程与工程落地经验，擅长将复杂流程工具化、自动化。"
+      },
+      {
+        "title": "AI 实战与提效",
+        "description": "专注真实工作与生活中的具体 AI 应用案例，重实操、讲人话。"
+      },
+      {
+        "title": "编程化视频创作",
+        "description": "探索 AI 辅助内容生产与 Remotion 等代码生成视频工作流。"
+      },
+      {
+        "title": "开源项目挖掘",
+        "description": "持续发掘、实测好用的开源项目，并编写普通人也能看懂的上手指南。"
+      }
+    ]
+  },
+  "contact": {
+    "videoPlatforms": [
+      {
+        "name": "Bilibili（B站）",
+        "account": "@蜘蛛侦探（可在 site.json 修改）",
+        "description": "发布完整版 AI 实操教程、案例拆解与开源项目演示视频。",
+        "url": "https://space.bilibili.com/",
+        "actionLabel": "前往 B 站主页 ↗"
+      },
+      {
+        "name": "抖音",
+        "account": "@蜘蛛侦探（可在 site.json 修改）",
+        "description": "发布精炼版 AI 使用技巧、实战案例与工具分享。",
+        "url": "https://www.douyin.com/",
+        "actionLabel": "前往抖音主页 ↗"
+      },
+      {
+        "name": "小红书 / 视频号",
+        "account": "@蜘蛛侦探（可在 site.json 修改）",
+        "description": "图文与短视频形式的日常 AI 经验速览。",
+        "url": "https://www.xiaohongshu.com/",
+        "actionLabel": "前往图文主页 ↗"
+      }
+    ],
+    "codePlatforms": [
+      {
+        "name": "GitHub",
+        "account": "github.com/your-username",
+        "description": "存放个人开源代码、视频配套源码及配置模板。",
+        "url": "https://github.com/",
+        "actionLabel": "访问 GitHub ↗"
+      }
+    ],
+    "community": {
+      "wechat": {
+        "name": "公众号 / 读者交流",
+        "accountName": "蜘蛛侦探（预留公众号位）",
+        "description": "获取图文更新推送与读者交流入口，支持扫码关注或搜索名称。",
+        "qrCode": "/images/wechat-qr-placeholder.svg"
+      },
+      "email": {
+        "name": "商务与合作联系",
+        "address": "your-email@example.com",
+        "description": "合作洽谈、工具测评交流或内容转载联系邮箱。"
+      }
+    }
+  }
+}

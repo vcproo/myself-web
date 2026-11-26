@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#F7F2EA"/>
+  <circle cx="160" cy="100" r="160" fill="#F5EBD0" opacity="0.7"/>
+  <circle cx="670" cy="360" r="170" fill="#FBE3D7" opacity="0.65"/>
+  <!-- Messy notes left -->
+  <g transform="rotate(-4 210 225)">
+    <rect x="96" y="110" width="220" height="230" rx="18" fill="#FCFBF8" stroke="#221E1C" stroke-width="2.2"/>
+    <rect x="122" y="140" width="90" height="10" rx="5" fill="#968B82"/>
+    <path d="M122 175 Q165 162 210 178 T285 172" stroke="#D5C7AE" stroke-width="4" stroke-linecap="round"/>
+    <path d="M122 205 Q175 218 225 200 T275 208" stroke="#D5C7AE" stroke-width="4" stroke-linecap="round"/>
+    <path d="M122 238 Q160 225 215 242 T282 235" stroke="#D5C7AE" stroke-width="4" stroke-linecap="round"/>
+    <rect x="122" y="274" width="116" height="28" rx="14" fill="#F3EDE3"/>
+    <text x="180" y="292" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="600" fill="#645B55">零散原始记录</text>
+  </g>
+  <!-- Transform Bridge -->
+  <rect x="352" y="196" width="96" height="58" rx="29" fill="#D95D39" stroke="#221E1C" stroke-width="2.2"/>
+  <path d="M382 225 H418 M408 214 L420 225 L408 236" stroke="#FCFBF8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Structured Checklist right -->
+  <g transform="rotate(2 585 225)">
+    <rect x="478" y="96" width="234" height="258" rx="18" fill="#FCFBF8" stroke="#221E1C" stroke-width="2.5"/>
+    <rect x="504" y="124" width="110" height="24" rx="12" fill="#E1ECE3"/>
+    <text x="559" y="140" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#365A40">可执行清单</text>
+    <rect x="504" y="168" width="182" height="42" rx="10" fill="#FAF7F2" stroke="#E5DCCF" stroke-width="1.5"/>
+    <circle cx="525" cy="189" r="8" fill="#467352"/>
+    <path d="M521 189 L524 192 L530 186" stroke="#FCFBF8" stroke-width="2" stroke-linecap="round"/>
+    <rect x="544" y="185" width="120" height="8" rx="4" fill="#221E1C"/>
+    <rect x="504" y="222" width="182" height="42" rx="10" fill="#FAF7F2" stroke="#E5DCCF" stroke-width="1.5"/>
+    <circle cx="525" cy="243" r="8" fill="#D95D39"/>
+    <path d="M521 243 L524 246 L530 240" stroke="#FCFBF8" stroke-width="2" stroke-linecap="round"/>
+    <rect x="544" y="239" width="104" height="8" rx="4" fill="#221E1C"/>
+    <rect x="504" y="276" width="182" height="42" rx="10" fill="#FAF7F2" stroke="#E5DCCF" stroke-width="1.5"/>
+    <circle cx="525" cy="297" r="8" fill="#C88A2E"/>
+    <rect x="544" y="293" width="126" height="8" rx="4" fill="#645B55"/>
+  </g>
+</svg>

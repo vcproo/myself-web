@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticlesArchiveView from '../../components/ArticlesArchiveView';
+import { getSiteConfig, getAllArticles } from '../../lib/content';
+
+const site = getSiteConfig();
+const allArticles = await getAllArticles();
+
+const articleCards = allArticles.map((a) => ({
+  slug: a.slug,
+  title: a.title,
+  formattedDate: a.formattedDate,
+  summary: a.summary,
+  category: a.category,
+  cover: a.cover,
+  readingMinutes: a.readingMinutes,
+  videoLinks: a.videoLinks,
+}));
+---
+
+<BaseLayout
+  title={`全部教程与文章 · ${site.siteName}`}
+  description="收录所有 AI 实战使用经验、具体案例拆解与开源工具实操教程"
+  showBackHome={true}
+>
+  <section class="pt-9 pb-12">
+    <div class="mb-8">
+      <a
+        href="/"
+        class="inline-flex items-center gap-1 text-xs font-semibold text-ink-600 hover:text-terracotta-600 transition-colors"
+      >
+        <span>← 返回首页</span>
+      </a>
+      <div class="mt-4 flex items-center gap-2">
+        <span class="h-1 w-6 rounded-full bg-terracotta-500"></span>
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-ink-400">
+          ARTICLES ARCHIVE
+        </span>
+      </div>
+      <h1 class="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight text-ink-900">
+        全部教程与文章
+      </h1>
+      <p class="mt-2 text-sm sm:text-base text-ink-600">
+        收录所有 AI 实战使用经验、具体案例拆解与开源工具实操教程
+      </p>
+    </div>
+
+    <ArticlesArchiveView
+      client:load
+      articles={articleCards}
+      categories={site.articleCategories}
+    />
+  </section>
+</BaseLayout>

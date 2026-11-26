@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <pattern id="dotsAudio" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#D5C7AE" opacity="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#F7F2EA"/>
+  <rect width="800" height="450" fill="url(#dotsAudio)"/>
+  <circle cx="630" cy="110" r="155" fill="#F5EBD0" opacity="0.7"/>
+  <circle cx="170" cy="340" r="150" fill="#E1ECE3" opacity="0.65"/>
+
+  <!-- Studio Microphone on Stand (Left) -->
+  <g transform="translate(115, 92)">
+    <rect x="42" y="22" width="56" height="104" rx="28" fill="#FCFBF8" stroke="#221E1C" stroke-width="3"/>
+    <line x1="44" y1="54" x2="96" y2="54" stroke="#221E1C" stroke-width="2.2"/>
+    <line x1="44" y1="72" x2="96" y2="72" stroke="#D95D39" stroke-width="2.2"/>
+    <line x1="44" y1="90" x2="96" y2="90" stroke="#221E1C" stroke-width="2.2"/>
+    <path d="M24 88 C24 128 44 150 70 150 C96 150 116 128 116 88" stroke="#221E1C" stroke-width="3.2" stroke-linecap="round"/>
+    <line x1="70" y1="150" x2="70" y2="246" stroke="#221E1C" stroke-width="3.5"/>
+    <rect x="30" y="246" width="80" height="14" rx="7" fill="#D95D39" stroke="#221E1C" stroke-width="2.6"/>
+  </g>
+
+  <!-- Flowing Soundwave Ribbons -->
+  <path d="M255 182 C305 128 345 236 398 182" stroke="#D95D39" stroke-width="4" stroke-linecap="round"/>
+  <path d="M255 206 C305 256 345 152 398 206" stroke="#467352" stroke-width="3.5" stroke-linecap="round"/>
+  <g fill="#C88A2E">
+    <rect x="285" y="160" width="6" height="68" rx="3"/>
+    <rect x="305" y="142" width="6" height="104" rx="3"/>
+    <rect x="325" y="168" width="6" height="52" rx="3"/>
+    <rect x="345" y="150" width="6" height="88" rx="3"/>
+    <rect x="365" y="172" width="6" height="44" rx="3"/>
+  </g>
+
+  <!-- SRT Subtitle Cards Stack (Right) -->
+  <g transform="translate(420, 96)">
+    <rect x="0" y="0" width="276" height="74" rx="16" fill="#FCFBF8" stroke="#221E1C" stroke-width="2.6"/>
+    <rect x="18" y="16" width="96" height="18" rx="9" fill="#E1ECE3"/>
+    <text x="66" y="29" text-anchor="middle" font-family="monospace" font-size="10.5" font-weight="700" fill="#365A40">00:00:04,200</text>
+    <rect x="18" y="44" width="210" height="10" rx="5" fill="#221E1C"/>
+
+    <rect x="14" y="92" width="276" height="74" rx="16" fill="#FDF3EE" stroke="#D95D39" stroke-width="2.6"/>
+    <rect x="32" y="108" width="96" height="18" rx="9" fill="#D95D39"/>
+    <text x="80" y="121" text-anchor="middle" font-family="monospace" font-size="10.5" font-weight="700" fill="#FCFBF8">00:00:08,650</text>
+    <rect x="32" y="136" width="224" height="10" rx="5" fill="#221E1C"/>
+
+    <rect x="0" y="184" width="276" height="74" rx="16" fill="#FCFBF8" stroke="#221E1C" stroke-width="2.6"/>
+    <rect x="18" y="200" width="96" height="18" rx="9" fill="#F5EBD0"/>
+    <text x="66" y="213" text-anchor="middle" font-family="monospace" font-size="10.5" font-weight="700" fill="#A9701E">00:00:13,100</text>
+    <rect x="18" y="228" width="186" height="10" rx="5" fill="#645B55"/>
+  </g>
+</svg>
