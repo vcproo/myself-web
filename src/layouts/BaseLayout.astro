@@ -44,6 +44,8 @@ const currentPath = Astro.url.pathname;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" sizes="32x32" type="image/png" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/ip/avatar-256.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <ClientRouter />
@@ -55,15 +57,31 @@ const currentPath = Astro.url.pathname;
     <!-- Sticky Global Top Header -->
     <header class="sticky top-0 z-40 border-b border-paper-300/80 bg-paper-100/85 backdrop-blur-md">
       <div class="mx-auto flex max-w-[960px] flex-wrap items-center justify-between gap-3 px-5 py-3.5 sm:px-8">
-        <!-- Left Brand -->
+        <!-- Left Brand (Original IP Avatar + Brand Lockup) -->
         <a
           href="/"
-          class="group inline-flex items-center gap-2.5 text-base sm:text-lg font-extrabold tracking-tight text-ink-900 shrink-0"
+          title="回到首页"
+          aria-label={`${site.siteName}，回到首页`}
+          class="group inline-flex items-center gap-3 shrink-0"
         >
-          <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-ink-900 text-paper-50 transition-transform duration-300 group-hover:-rotate-6 group-hover:bg-terracotta-500">
-            <span class="h-2 w-2 rounded-full bg-terracotta-200 group-hover:bg-paper-50"></span>
+          <span class="grid h-[38px] w-[38px] flex-none place-items-center rounded-full bg-[#F3EBDD] ring-1 ring-ink-900/12 shadow-sm transition-all duration-500 [transition-timing-function:cubic-bezier(.34,1.56,.64,1)] group-hover:-rotate-[8deg] group-hover:scale-[1.06] group-hover:ring-sage-600/35 group-hover:shadow-[0_0_0_5px_rgba(70,115,82,0.12)]">
+            <img
+              src="/ip/avatar-64.png"
+              srcset="/ip/avatar-64.png 1x, /ip/avatar-256.png 2x"
+              width="34"
+              height="34"
+              alt={site.siteName}
+              class="h-[34px] w-[34px] rounded-full object-cover"
+            />
           </span>
-          <span>{site.siteName}</span>
+          <span class="grid leading-[1.15]">
+            <b class="text-[16.5px] font-extrabold tracking-[0.02em] text-ink-900">
+              {site.siteName}
+            </b>
+            <small class="font-mono text-[9.5px] font-semibold uppercase tracking-[0.22em] text-ink-400">
+              SPIDER DETECTIVE
+            </small>
+          </span>
         </a>
 
         <!-- Center Primary Navigation: 文章 / 开源工具 / 关于 / 交流联系 -->

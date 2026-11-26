@@ -136,14 +136,25 @@ export default function HeroStudio({
               </span>
             </div>
 
-            {/* Creator Name & Signature */}
-            <div className="mt-5 flex flex-wrap items-baseline gap-3">
-              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-900">
-                {siteName}
-              </h1>
-              <span className="font-mono text-xs font-semibold uppercase tracking-widest text-terracotta-600">
-                DEV · AI · VIDEO
+            {/* Creator Avatar & Name Signature */}
+            <div className="mt-5 flex items-center gap-3.5">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#F3EBDD] ring-1 ring-ink-900/12 shadow-sm transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-105">
+                <img
+                  src="/ip/avatar-256.png"
+                  width="44"
+                  height="44"
+                  alt={siteName}
+                  className="h-11 w-11 rounded-full object-cover"
+                />
               </span>
+              <div className="flex flex-wrap items-baseline gap-2.5">
+                <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-900">
+                  {siteName}
+                </h1>
+                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-terracotta-600">
+                  DEV · AI · VIDEO
+                </span>
+              </div>
             </div>
 
             {/* Clean Concise Bio */}
