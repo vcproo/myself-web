@@ -77,21 +77,21 @@
     "videoPlatforms": [
       {
         "name": "Bilibili（B站）",
-        "account": "@蜘蛛侦探（可在 site.json 修改）",
+        "account": "@蜘蛛侦探",
         "description": "发布完整版 AI 实操教程、案例拆解与开源项目演示视频。",
         "url": "https://space.bilibili.com/",
         "actionLabel": "前往 B 站主页 ↗"
       },
       {
         "name": "抖音",
-        "account": "@蜘蛛侦探（可在 site.json 修改）",
+        "account": "@蜘蛛侦探",
         "description": "发布精炼版 AI 使用技巧、实战案例与工具分享。",
         "url": "https://www.douyin.com/",
         "actionLabel": "前往抖音主页 ↗"
       },
       {
         "name": "小红书 / 视频号",
-        "account": "@蜘蛛侦探（可在 site.json 修改）",
+        "account": "@蜘蛛侦探",
         "description": "图文与短视频形式的日常 AI 经验速览。",
         "url": "https://www.xiaohongshu.com/",
         "actionLabel": "前往图文主页 ↗"
@@ -100,16 +100,16 @@
     "codePlatforms": [
       {
         "name": "GitHub",
-        "account": "github.com/your-username",
+        "account": "github.com/vcproo",
         "description": "存放个人开源代码、视频配套源码及配置模板。",
-        "url": "https://github.com/",
+        "url": "https://github.com/vcproo",
         "actionLabel": "访问 GitHub ↗"
       }
     ],
     "community": {
       "wechat": {
         "name": "公众号 / 读者交流",
-        "accountName": "蜘蛛侦探（预留公众号位）",
+        "accountName": "蜘蛛侦探",
         "description": "获取图文更新推送与读者交流入口，支持扫码关注或搜索名称。",
         "qrCode": "/images/wechat-qr-placeholder.svg"
       },

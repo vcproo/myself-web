@@ -1,8 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&family=Ma+Shan+Zheng&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=ZCOOL+XiaoWei&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-art {
+  font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', 'Kaiti SC', 'STKaiti', 'KaiTi', serif;
+}
+
+.font-editorial-zh {
+  font-family: 'ZCOOL XiaoWei', 'Songti SC', 'Noto Serif SC', serif;
+}
+
+.font-editorial-en {
+  font-family: 'Cormorant Garamond', 'Newsreader', Georgia, serif;
+}
 
 :root {
   --bg-canvas: #FAF7F2;
@@ -41,6 +53,14 @@
   ::selection {
     background-color: #FBE3D7;
     color: #221E1C;
+  }
+}
+
+/* Hide default system pointer on fine-pointer desktop devices at any window width */
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
   }
 }
 

@@ -5,12 +5,13 @@ import { getSiteConfig, getAllArticles, getAllTools } from '../lib/content';
 import InteractiveCursor from '../components/InteractiveCursor';
 import ScrollVernier from '../components/ScrollVernier';
 import CommandPalette from '../components/CommandPalette';
-import HeaderNav from '../components/HeaderNav';
+import FloatingDock from '../components/FloatingDock';
 
 interface Props {
   title?: string;
   description?: string;
   showBackHome?: boolean;
+  fullBleed?: boolean;
 }
 
 const site = getSiteConfig();
@@ -33,9 +34,11 @@ const {
   title = `${site.siteName} · ${site.hero.subtitle}`,
   description = site.hero.description,
   showBackHome = false,
+  fullBleed = false,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/' || currentPath === '';
 ---
 
 <!doctype html>
@@ -50,63 +53,50 @@ const currentPath = Astro.url.pathname;
     <meta name="description" content={description} />
     <ClientRouter />
   </head>
-  <body class="font-sans text-ink-900 selection:bg-terracotta-100">
-    <InteractiveCursor client:idle />
+  <body class="font-sans text-ink-900 selection:bg-[#C7EFDC]/70">
+    <InteractiveCursor client:load />
     <ScrollVernier client:load />
 
-    <!-- Sticky Global Top Header -->
-    <header class="sticky top-0 z-40 border-b border-paper-300/80 bg-paper-100/85 backdrop-blur-md">
-      <div class="mx-auto flex max-w-[960px] flex-wrap items-center justify-between gap-3 px-5 py-3.5 sm:px-8">
-        <!-- Left Brand (Original IP Avatar + Brand Lockup) -->
-        <a
-          href="/"
-          title="回到首页"
-          aria-label={`${site.siteName}，回到首页`}
-          class="group inline-flex items-center gap-3 shrink-0"
-        >
-          <span class="grid h-[38px] w-[38px] flex-none place-items-center rounded-full bg-[#F3EBDD] ring-1 ring-ink-900/12 shadow-sm transition-all duration-500 [transition-timing-function:cubic-bezier(.34,1.56,.64,1)] group-hover:-rotate-[8deg] group-hover:scale-[1.06] group-hover:ring-sage-600/35 group-hover:shadow-[0_0_0_5px_rgba(70,115,82,0.12)]">
+    <!-- Global Command Palette (opened via ⌘K or Floating Dock search button, no navbar needed) -->
+    <CommandPalette
+      client:load
+      hideTrigger={true}
+      articles={searchArticles}
+      tools={searchTools}
+      email={site.contact.community.email.address}
+    />
+
+    {fullBleed ? (
+      <main class="min-h-screen w-full">
+        <slot />
+      </main>
+    ) : (
+      <div class="mx-auto flex min-h-screen max-w-[960px] flex-col px-5 sm:px-8 pb-20">
+        <!-- Subpage whisper-minimal top return bar (No full navbar) -->
+        <div class="flex items-center justify-between pt-6 pb-2">
+          <a
+            href="/"
+            class="group inline-flex items-center gap-2.5 rounded-full border border-paper-300/90 bg-paper-50/90 px-3 py-1.5 shadow-sm hover:border-[#27232D]/40 transition-colors"
+          >
             <img
               src="/ip/avatar-64.png"
-              srcset="/ip/avatar-64.png 1x, /ip/avatar-256.png 2x"
-              width="34"
-              height="34"
+              width="24"
+              height="24"
               alt={site.siteName}
-              class="h-[34px] w-[34px] rounded-full object-cover"
+              class="h-6 w-6 rounded-full bg-[#F3EBDD] object-cover"
             />
-          </span>
-          <span class="grid leading-[1.15]">
-            <b class="text-[16.5px] font-extrabold tracking-[0.02em] text-ink-900">
+            <span class="text-xs font-extrabold text-ink-900">
               {site.siteName}
-            </b>
-            <small class="font-mono text-[9.5px] font-semibold uppercase tracking-[0.22em] text-ink-400">
-              SPIDER DETECTIVE
-            </small>
-          </span>
-        </a>
+            </span>
+          </a>
 
-        <!-- Center Primary Navigation: 文章 / 开源工具 / 关于 / 交流联系 -->
-        <div class="order-3 w-full overflow-x-auto md:order-2 md:w-auto flex justify-center">
-          <HeaderNav client:load currentPath={currentPath} />
-        </div>
-
-        <!-- Right Search + External Quick Links -->
-        <div class="order-2 md:order-3 flex items-center gap-1.5 sm:gap-2 shrink-0">
-          <CommandPalette
-            client:load
-            articles={searchArticles}
-            tools={searchTools}
-            email={site.contact.community.email.address}
-          />
-
-          <span class="hidden sm:inline-block h-3.5 w-[1px] bg-paper-300" aria-hidden="true"></span>
-
-          <div class="hidden sm:flex items-center gap-1.5">
+          <div class="flex items-center gap-1.5">
             {site.headerLinks.map((link) => (
               <a
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="tactile-btn inline-flex items-center gap-1 rounded-full border border-paper-300 bg-paper-50/90 px-2.5 py-1 text-xs font-semibold text-ink-800 hover:border-terracotta-500 hover:text-terracotta-600 transition-colors"
+                class="tactile-btn inline-flex items-center gap-1 rounded-full border border-paper-300 bg-paper-50/90 px-2.5 py-1 text-xs font-semibold text-ink-800 hover:border-[#D95A49] hover:text-[#D95A49] transition-colors"
               >
                 <span>{link.label}</span>
                 <span aria-hidden="true" class="text-[10px] text-ink-400">↗</span>
@@ -114,39 +104,31 @@ const currentPath = Astro.url.pathname;
             ))}
           </div>
         </div>
+
+        <main class="flex-1">
+          <slot />
+        </main>
+
+        <footer class="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-paper-300/90 py-7 text-xs text-ink-600">
+          <div class="flex items-center gap-2 font-mono">
+            <span>{site.copyright}</span>
+          </div>
+
+          <div class="flex items-center gap-5 font-semibold">
+            {showBackHome && (
+              <a
+                href="/"
+                class="inline-flex items-center gap-1 text-ink-800 hover:text-terracotta-600 transition-colors"
+              >
+                <span>← 返回首页</span>
+              </a>
+            )}
+          </div>
+        </footer>
       </div>
-    </header>
+    )}
 
-    <div class="mx-auto flex min-h-[calc(100vh-68px)] max-w-[960px] flex-col px-5 sm:px-8">
-      <!-- Page Main Content -->
-      <main class="flex-1">
-        <slot />
-      </main>
-
-      <!-- Global Footer -->
-      <footer class="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-paper-300/90 py-7 text-xs text-ink-600">
-        <div class="flex items-center gap-2 font-mono">
-          <span>{site.copyright}</span>
-        </div>
-
-        <div class="flex items-center gap-5 font-semibold">
-          {showBackHome ? (
-            <a
-              href="/"
-              class="inline-flex items-center gap-1 text-ink-800 hover:text-terracotta-600 transition-colors"
-            >
-              <span>← 返回首页</span>
-            </a>
-          ) : (
-            <a
-              href="/articles"
-              class="inline-flex items-center gap-1 text-ink-600 hover:text-terracotta-600 transition-colors"
-            >
-              <span>全部文章归档</span>
-            </a>
-          )}
-        </div>
-      </footer>
-    </div>
+    <!-- Sleek Bottom Floating Capsule Dock (hidden on 100vh opening screen, appears on scroll!) -->
+    <FloatingDock client:load currentPath={currentPath} alwaysVisible={!isHome} />
   </body>
 </html>

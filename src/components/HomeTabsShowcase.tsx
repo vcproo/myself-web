@@ -309,14 +309,9 @@ export default function HomeTabsShowcase({
             <InteractiveToolShowcases />
 
             <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-t border-paper-300 pt-8">
-              <div>
-                <h3 className="text-base font-extrabold text-ink-900">
-                  全部分组工具清单
-                </h3>
-                <p className="text-xs text-ink-600 mt-0.5">
-                  点击分组胶囊快速过滤，或进入独立汇总页按关键词搜索。
-                </p>
-              </div>
+              <h3 className="text-base font-extrabold text-ink-900">
+                全部分组工具清单
+              </h3>
               <a
                 href="/tools"
                 className="inline-flex shrink-0 items-center gap-1 text-xs font-bold text-terracotta-600 hover:text-terracotta-700"
@@ -399,9 +394,13 @@ export default function HomeTabsShowcase({
                   ))}
                 </div>
                 <div className="lg:col-span-5">
-                  <div className="rounded-2xl border border-paper-300/80 bg-paper-100/70 p-3">
-                    <OpenSourceWorkbenchIllustration className="w-full h-auto" />
-                    <p className="mt-1 text-center font-mono text-[11px] text-ink-400">
+                  <div className="flex flex-col items-center justify-center rounded-2xl border border-paper-300/80 bg-[#F3EBDD]/55 p-5">
+                    <img
+                      src="/ip/ip-pose-think.png"
+                      alt="蜘蛛侦探思考形象"
+                      className="h-52 w-52 object-contain transition-transform duration-500 group-hover:-translate-y-1.5 group-hover:rotate-2"
+                    />
+                    <p className="mt-2 text-center font-mono text-[11px] font-semibold tracking-wider text-[#49414F]">
                       ENGINEER · AI PRACTITIONER · VIDEO CREATOR
                     </p>
                   </div>
@@ -415,7 +414,7 @@ export default function HomeTabsShowcase({
                 <div className="flex items-center gap-2">
                   <span className="h-3.5 w-1 rounded-full bg-terracotta-500" />
                   <h3 className="text-base font-extrabold text-ink-900">
-                    我的内容打磨与工具实测流程（点击节点查看）
+                    我的内容打磨与工具实测流程
                   </h3>
                 </div>
                 <span className="font-mono text-xs text-ink-400">
@@ -689,11 +688,11 @@ export default function HomeTabsShowcase({
                           <div className="mt-3 flex items-center gap-3.5 rounded-xl border border-paper-300 bg-paper-100 p-3">
                             <img
                               src={contact.community.wechat.qrCode}
-                              alt="公众号二维码占位"
+                              alt="公众号二维码"
                               className="h-20 w-20 rounded-lg border border-paper-300 bg-paper-50 p-1"
                             />
                             <p className="text-xs leading-relaxed text-ink-600">
-                              将真实二维码放入 <code className="font-mono">public/images/</code> 并修改 <code className="font-mono">content/site.json</code> 即可替换。
+                              微信扫码关注，及时获取最新图文教程与开源好物更新。
                             </p>
                           </div>
                         </motion.div>

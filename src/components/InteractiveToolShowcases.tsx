@@ -103,12 +103,9 @@ export default function InteractiveToolShowcases() {
             ✦
           </span>
           <h3 className="text-base font-extrabold text-ink-900">
-            精选工具 · 实时交互体验台
+            精选工具 · 交互体验台
           </h3>
         </div>
-        <span className="font-mono text-xs text-ink-400">
-          直接在卡片内点击、拖拽即可体验核心工作流
-        </span>
       </div>
 
       {/* SHOWCASE 01: Remotion Interactive Motion Lab */}
@@ -455,7 +452,7 @@ export default function InteractiveToolShowcases() {
               Ollama + 开源 AI 桌面端组合
             </h4>
             <p className="text-sm leading-relaxed text-ink-600">
-              无需复杂环境配置，一行命令在个人电脑离线运行开源模型，配合桌面客户端全局快捷键随时呼出。点击右侧机械按键体验即时响应流。
+              无需复杂环境配置，一行命令在个人电脑离线运行开源模型，配合桌面客户端全局快捷键随时呼出。
             </p>
             <div className="flex flex-wrap items-center gap-2.5 pt-2">
               <a

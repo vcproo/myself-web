@@ -16,9 +16,15 @@ interface Props {
   articles: { slug: string; title: string; category: string }[];
   tools: { name: string; group: string; url: string }[];
   email: string;
+  hideTrigger?: boolean;
 }
 
-export default function CommandPalette({ articles, tools, email }: Props) {
+export default function CommandPalette({
+  articles,
+  tools,
+  email,
+  hideTrigger = false,
+}: Props) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -150,18 +156,20 @@ export default function CommandPalette({ articles, tools, email }: Props) {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        title="全站快速搜索 (Ctrl+K / ⌘K)"
-        className="tactile-btn inline-flex items-center gap-1.5 rounded-full border border-paper-300 bg-paper-100/90 px-3 py-1 text-xs font-semibold text-ink-600 hover:border-terracotta-500 hover:bg-paper-50 hover:text-ink-900 transition-colors"
-      >
-        <Search className="h-3.5 w-3.5 text-terracotta-500" />
-        <span className="hidden md:inline">搜索</span>
-        <kbd className="rounded border border-paper-300 bg-paper-50 px-1.5 py-0.2 font-mono text-[10px] text-ink-400">
-          ⌘K
-        </kbd>
-      </button>
+      {!hideTrigger && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          title="全站快速搜索 (Ctrl+K / ⌘K)"
+          className="tactile-btn inline-flex items-center gap-1.5 rounded-full border border-paper-300 bg-paper-100/90 px-3 py-1 text-xs font-semibold text-ink-600 hover:border-terracotta-500 hover:bg-paper-50 hover:text-ink-900 transition-colors"
+        >
+          <Search className="h-3.5 w-3.5 text-terracotta-500" />
+          <span className="hidden md:inline">搜索</span>
+          <kbd className="rounded border border-paper-300 bg-paper-50 px-1.5 py-0.2 font-mono text-[10px] text-ink-400">
+            ⌘K
+          </kbd>
+        </button>
+      )}
 
       <AnimatePresence>
         {open && (

@@ -1,19 +1,19 @@
 [
   {
-    "name": "短视频动态图文卡片模板（示例占位）",
+    "name": "短视频动态图文卡片模板",
     "group": "自研与模板",
     "description": "制作知识分享视频时沉淀的可复用视频组件模板，改文案即可快速渲染出片。",
     "tags": ["自研开源", "开箱即用"],
-    "url": "https://github.com/",
+    "url": "https://github.com/vcproo",
     "urlLabel": "GitHub ↗",
     "relatedArticleSlug": "remotion-ai-knowledge-video"
   },
   {
-    "name": "日常高频 AI 结构化提示词模板集（示例占位）",
+    "name": "日常高频 AI 结构化提示词模板集",
     "group": "自研与模板",
     "description": "覆盖文档提炼、方案拆解、代码排错与视频脚本整理的实测提示词集合，复制即可套用。",
     "tags": ["自研整理", "免费复用"],
-    "url": "https://github.com/",
+    "url": "https://github.com/vcproo",
     "urlLabel": "GitHub ↗",
     "relatedArticleSlug": "structured-prompt-templates-for-creators"
   },
@@ -27,7 +27,7 @@
     "relatedArticleSlug": "remotion-ai-knowledge-video"
   },
   {
-    "name": "Whisper 本地语音转字幕工具链（示例占位）",
+    "name": "Whisper 本地语音转字幕工具链",
     "group": "AI 视频与内容创作",
     "description": "在本地电脑离线完成高精度中英文语音识别与 SRT 时间轴导出，口播剪辑省时利器。",
     "tags": ["开源项目", "本地可用", "免费"],
@@ -36,20 +36,20 @@
     "relatedArticleSlug": "subtitle-and-voiceover-open-source-workflow"
   },
   {
-    "name": "精选开源 AI 桌面助手（示例占位）",
+    "name": "精选开源 AI 桌面助手",
     "group": "AI 效率与日常工具",
     "description": "支持接入多种主流大模型的轻量桌面端工具，界面清爽，适合日常问答、翻译与文档总结。",
     "tags": ["开源项目", "免费"],
-    "url": "https://github.com/",
+    "url": "https://github.com/vcproo",
     "urlLabel": "GitHub ↗",
     "relatedArticleSlug": "zero-basis-github-ai-guide"
   },
   {
-    "name": "本地知识库与长文档问答工具（示例占位）",
+    "name": "本地知识库与长文档问答工具",
     "group": "AI 效率与日常工具",
     "description": "把多份 PDF、Word 与笔记拖入文件夹即可直接提问检索，每条回答均附带原文出处定位。",
     "tags": ["实用工具", "本地优先"],
-    "url": "https://github.com/",
+    "url": "https://github.com/vcproo",
     "urlLabel": "GitHub ↗",
     "relatedArticleSlug": "local-llm-and-desktop-assistants-review"
   },

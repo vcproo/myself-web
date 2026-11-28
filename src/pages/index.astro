@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroStudio from '../components/HeroStudio';
+import CreativeOpeningHero from '../components/CreativeOpeningHero';
 import HomeTabsShowcase from '../components/HomeTabsShowcase';
 import { getSiteConfig, getAllArticles, getAllTools } from '../lib/content';
 
@@ -29,25 +29,81 @@ const homeArticleCards = sortedForHome.map((a) => ({
   title={`${site.siteName} · ${site.hero.subtitle}`}
   description={site.hero.description}
   showBackHome={false}
+  fullBleed={true}
 >
-  <HeroStudio
-    client:load
-    siteName={site.siteName}
-    subtitle={site.hero.subtitle}
-    description={site.hero.description}
-    featuredArticles={homeArticleCards}
-    featuredTools={tools}
-    totalToolCount={tools.length}
-    headerLinks={site.headerLinks}
-  />
+  <!-- SCREEN 1: Zero-Nav, Zero-Clutter 100vh Interactive IP Opening Screen -->
+  <CreativeOpeningHero client:load siteName={site.siteName} />
 
-  <HomeTabsShowcase
-    client:load
-    articles={homeArticleCards}
-    totalArticleCount={allArticles.length}
-    tools={tools}
-    toolGroups={site.toolGroups}
-    about={site.about}
-    contact={site.contact}
-  />
+  <!-- SCREEN 2+: Scroll-Revealed Warm Paper Curtain Sheet -->
+  <div
+    id="content-curtain"
+    class="relative z-20 -mt-10 min-h-screen rounded-t-[36px] border-t border-[#E5DCCF] bg-[#FCFBF8]/96 shadow-[0_-24px_64px_-20px_rgba(39,35,45,0.12)] backdrop-blur-sm"
+  >
+    <div class="mx-auto max-w-[960px] px-5 pt-10 pb-24 sm:px-8 sm:pt-14">
+      <!-- Compact Editorial Identity Strip Revealed Only After Scrolling -->
+      <div class="mb-10 flex flex-col gap-5 border-b border-paper-300/80 pb-8 md:flex-row md:items-center md:justify-between">
+        <div class="flex items-start gap-4">
+          <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-[#F3EBDD] ring-1 ring-ink-900/12 shadow-sm">
+            <img
+              src="/ip/avatar-256.png"
+              width="48"
+              height="48"
+              alt={site.siteName}
+              class="h-12 w-12 rounded-full object-cover"
+            />
+          </span>
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <h1 class="text-2xl font-extrabold tracking-tight text-[#27232D]">
+                {site.siteName}
+              </h1>
+              <span class="rounded-full bg-[#C7EFDC]/70 px-2.5 py-0.5 font-mono text-[11px] font-bold text-[#27232D]">
+                {site.hero.subtitle}
+              </span>
+            </div>
+            <p class="mt-2 max-w-xl text-sm leading-relaxed text-ink-600">
+              {site.hero.description}
+            </p>
+          </div>
+        </div>
+
+        <!-- External Social Quick Links -->
+        <div class="flex flex-wrap items-center gap-2 shrink-0">
+          {site.headerLinks.map((link) => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="tactile-btn inline-flex items-center gap-1 rounded-full border border-paper-300 bg-paper-50 px-3.5 py-1.5 text-xs font-bold text-[#27232D] hover:border-[#D95A49] hover:text-[#D95A49] transition-colors"
+            >
+              <span>{link.label}</span>
+              <span aria-hidden="true" class="text-[10px] text-ink-400">↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Core 4-Tab Content Showcase -->
+      <HomeTabsShowcase
+        client:load
+        articles={homeArticleCards}
+        totalArticleCount={allArticles.length}
+        tools={tools}
+        toolGroups={site.toolGroups}
+        about={site.about}
+        contact={site.contact}
+      />
+
+      <!-- Clean Footer inside the Unveiled Content Sheet -->
+      <footer class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-paper-300/90 pt-7 text-xs text-ink-600">
+        <span class="font-mono">{site.copyright}</span>
+        <a
+          href="/articles"
+          class="font-semibold text-ink-600 hover:text-[#D95A49] transition-colors"
+        >
+          全部文章归档 →
+        </a>
+      </footer>
+    </div>
+  </div>
 </BaseLayout>

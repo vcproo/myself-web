@@ -156,7 +156,7 @@ export default function ArticlesArchiveView({ articles, categories }: Props) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="输入关键词快速检索文章标题或摘要（按 / 键聚焦）..."
+            placeholder="搜索文章标题或关键词..."
             className="w-full rounded-xl border border-paper-300 bg-paper-100/75 py-2.5 pl-10 pr-9 text-sm text-ink-900 placeholder:text-ink-400 focus:border-terracotta-500 focus:bg-paper-50 focus:outline-none transition-colors"
           />
           {query && (
